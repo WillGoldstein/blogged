@@ -11,7 +11,7 @@ class BlogController extends Controller
     /**
      * Show the blog home page.
      */
-    public function index($category, ArticleFilters $filters)
+    public function index($category=null, ArticleFilters $filters)
     {
         $pagination = config('blogged.settings.pagination');
 
