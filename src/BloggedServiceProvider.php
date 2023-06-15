@@ -24,9 +24,9 @@ class BloggedServiceProvider extends ServiceProvider
         Route::middlewareGroup('blogged-front', config('blogged.middleware-front', []));
         Route::middlewareGroup('blogged-back', config('blogged.middleware-back', []));
 
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        //$this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
-        $this->app->make('Illuminate\Database\Eloquent\Factory')->load(__DIR__ . '/../database/factories');
+        //$this->app->make('Illuminate\Database\Eloquent\Factory')->load(__DIR__ . '/../database/factories');
 
         $ns = $this->app->getNamespace();
 
