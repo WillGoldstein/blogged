@@ -23,7 +23,13 @@ class BlogController extends Controller
             return view('blogged::blog.index', compact('articles'));
         }
 
-        $articles = Article::published()->orderBy('publish_date', 'DESC')->with('category')->filter($filters)->paginate($pagination);
+        $articles = Article::published()->orderBy('publish_date', 'DESC')->with('category');
+
+        if ($filters){
+             $articles->filter($filters);
+        }
+        
+        $articles->paginate($pagination);
 
         return view('blogged::blog.index', compact('articles'));
     }
